@@ -68,14 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Antigo\GerarInimigos.cs" />
-    <Compile Include="Assets\Antigo\GerenciadorTeclas.cs" />
-    <Compile Include="Assets\Antigo\Inimigo.cs" />
-    <Compile Include="Assets\ControlaSequencia.cs" />
-    <Compile Include="Assets\Enenmy.cs" />
-    <Compile Include="Assets\Monge.cs" />
-    <Compile Include="Assets\Necromante.cs" />
-    <Compile Include="Assets\Personagem.cs" />
+    <Compile Include="Assets\Scripts\ControlaSequencia.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Monge.cs" />
+    <Compile Include="Assets\Scripts\Necromante.cs" />
+    <Compile Include="Assets\Scripts\Personagem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
