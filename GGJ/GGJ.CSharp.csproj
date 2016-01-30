@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Monge.cs" />
     <Compile Include="Assets\Scripts\Necromante.cs" />
     <Compile Include="Assets\Scripts\Personagem.cs" />
+    <Compile Include="Assets\Scripts\TesteAudio.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
