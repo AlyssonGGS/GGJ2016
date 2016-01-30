@@ -8,15 +8,7 @@ public class ControlaSequencia : MonoBehaviour {
     //sequencia à ser realizada pelos jogadores
     string sequencia;
     //usado para dizer em qual parte da sequencia os jogadores estão
-    int posSequencia;
-
-    StreamReader reader;
-
-    void Start()
-    {
-        reader = new StreamReader(Application.dataPath + "/teste.txt");
-        darSequencia(reader.ReadLine());
-    }
+    public static int posSequencia;
 
     void Update()
     {
@@ -25,7 +17,7 @@ public class ControlaSequencia : MonoBehaviour {
 
     public void verificaSequencia()
     {
-        if (sequencia != string.Empty)
+        if (sequencia != null)
         {
             char c = sequencia[posSequencia];
             if (Input.anyKeyDown)
@@ -33,19 +25,23 @@ public class ControlaSequencia : MonoBehaviour {
                 string estado = atual.testaInput(c);
                 if (estado == "certo")
                 {
-                    vezDeQuem();
-                    posSequencia++;
+					print(posSequencia++);
+
                     if (acabouSequencia())
                     {
-                        //recebe uma nova sequencia
-                        //sequencia = 
+						restauraSequencia();
+                        GameObject.Find("Controle").GetComponent<ControleJogo>().inimigoDestruido(GameObject.Find("enemy"));
                     }
+					else
+					{
+						vezDeQuem();
+					}
                     //acertou a tecla
                 }
                 else
                 {
-                    if (estado == "errado")
-                        restauraSequencia();
+					if(estado == "errado")
+                    	restauraSequencia();
                     //quebrou a sequencia
                 }
             }
@@ -83,12 +79,13 @@ public class ControlaSequencia : MonoBehaviour {
     //testa se a sequencia foi completada
     private bool acabouSequencia()
     {
-        return posSequencia >= sequencia.Length;
+        return posSequencia == sequencia.Length;
     }
     //restaura a sequencia ao estado inicial
     private void restauraSequencia()
     {
         posSequencia = 0;
+		vezDeQuem ();
     }
     //verifica se a proxima sequencia(por aquivo)
 }
