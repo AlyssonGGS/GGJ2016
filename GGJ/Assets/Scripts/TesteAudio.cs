@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class TesteAudio : MonoBehaviour
 {
     AudioSource audio;
-    float[] spectrum = new float[128];
+    float[] spectrum = new float[64];
 
-    void Start()
+    void Awake()
     {
         audio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        
+        direcaoAndandoComSom();
     }
 
-    void andarComSom()
+    void direcaoAndandoComSom()
     {
         audio.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
         for (int j = 0; j < spectrum.Length; j++)
