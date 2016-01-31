@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class AndarComSom : MonoBehaviour
 {
@@ -6,11 +7,12 @@ public class AndarComSom : MonoBehaviour
     float[] spectrum = new float[128];
 
     //variavel usada para acrescentar dificuldade ao jogo(inimigo andando mais rapido)
-    public float speed;
+    float speed = 1;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        StartCoroutine(aumentarVelocidade());
     }
 
     void Update()
@@ -28,5 +30,13 @@ public class AndarComSom : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * spectrum[j] * 100 * speed);
             }
         }
+    }
+
+    IEnumerator aumentarVelocidade() {
+        float q = 1.00069876f;
+        speed *= q;
+        print(speed);
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(aumentarVelocidade());
     }
 }
