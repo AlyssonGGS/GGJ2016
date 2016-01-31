@@ -68,19 +68,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Esperar.cs" />
-    <Compile Include="Assets\OutrasCenas.cs" />
-    <Compile Include="Assets\Prefabs\LaserController.cs" />
-    <Compile Include="Assets\SceneManager.cs" />
     <Compile Include="Assets\Scripts\AndarComSom.cs" />
     <Compile Include="Assets\Scripts\ControlaNecro.cs" />
     <Compile Include="Assets\Scripts\ControlaSequencia.cs" />
     <Compile Include="Assets\Scripts\ControleJogo.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Esperar.cs" />
+    <Compile Include="Assets\Scripts\LaserController.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Monge.cs" />
     <Compile Include="Assets\Scripts\Necromante.cs" />
+    <Compile Include="Assets\Scripts\OutrasCenas.cs" />
     <Compile Include="Assets\Scripts\Personagem.cs" />
+    <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\createString.cs" />
     <Compile Include="Assets\Scripts\keyPressed.cs" />
     <Compile Include="Assets\Scripts\spawnSequence.cs" />

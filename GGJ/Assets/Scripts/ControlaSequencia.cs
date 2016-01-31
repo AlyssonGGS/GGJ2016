@@ -29,7 +29,7 @@ public class ControlaSequencia : MonoBehaviour {
                     {
 						restauraSequencia();
                         GameObject enemy = GameObject.Find("enemy");
-                        GameObject.Find("Raio").GetComponent<LaserController>().chamarRaio(new Vector3(enemy.transform.position.x, -Camera.main.orthographicSize));
+                        GameObject.Find("Raio").GetComponent<LaserController>().chamarRaio(new Vector3(enemy.transform.position.x, -Camera.main.orthographicSize * 1.1f));
                         //vai na classe de controle de jogo para informar que um inimigo precisa ser destruido e, consequentemente, outro precisa ser instanciado
                         GetComponent<AudioSource>().Play();
                     }
