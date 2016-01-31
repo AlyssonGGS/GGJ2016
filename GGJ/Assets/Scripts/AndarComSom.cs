@@ -4,6 +4,8 @@ public class AndarComSom : MonoBehaviour
 {
     AudioSource audio;
     float[] spectrum = new float[128];
+
+    //variavel usada para acrescentar dificuldade ao jogo(inimigo andando mais rapido)
     public float speed;
 
     void Start()

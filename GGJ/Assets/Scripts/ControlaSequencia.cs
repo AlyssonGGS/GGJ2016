@@ -30,6 +30,7 @@ public class ControlaSequencia : MonoBehaviour {
                     if (acabouSequencia())
                     {
 						restauraSequencia();
+                        //vai na classe de controle de jogo para informar que um inimigo precisa ser destruido e, consequentemente, outro precisa ser instanciado
                         GameObject.Find("Controle").GetComponent<ControleJogo>().inimigoDestruido(GameObject.Find("enemy"));
                     }
 					else

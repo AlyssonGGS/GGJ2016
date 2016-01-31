@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//classe usada para controlar as animações do necromance pelo teclado
 public class ControlaNecro : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
+
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.W))
