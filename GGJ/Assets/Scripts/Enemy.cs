@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
         string sequence = GameObject.Find("Controle").GetComponent<ControleJogo>().pegaSequencia();
         GameObject.Find("SpawnManager").GetComponent<ControlaSequencia>().darSequencia(sequence);
         GameObject.FindWithTag("Spawner").GetComponent<spawnSequence>().spawn(sequence, gameObject);
+        transform.localScale = Vector3.one * 0.6f;
     }
 
 }

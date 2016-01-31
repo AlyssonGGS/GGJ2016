@@ -4,6 +4,7 @@ using System.Collections;
 public class ControleJogo : MonoBehaviour {
     string sequence;
     static GameObject prox;
+    public Sprite[] imagensInimigos;
 
     void Start ()
     {
@@ -31,6 +32,8 @@ public class ControleJogo : MonoBehaviour {
         yield return new WaitForSeconds(tempo);
         sequence = GameObject.FindWithTag("Spawner").GetComponent<createString>().generateSequence();
         prox = new GameObject("enemy", typeof(Enemy));
+        prox.AddComponent<SpriteRenderer>();
+        prox.GetComponent<SpriteRenderer>().sprite = imagensInimigos[0];
         prox.transform.parent = gameObject.transform;
     }
 }
