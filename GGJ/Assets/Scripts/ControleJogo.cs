@@ -24,12 +24,9 @@ public class ControleJogo : MonoBehaviour {
 
     public IEnumerator criarInimigo(float tempo)
     {
-        //zera a posição do pivot dos inimigos
         //espera o tempo
         yield return new WaitForSeconds(tempo);
         //escolhe qual inimigo instanciar
-        print("xablau");
-
         int idInimigoAtual = Random.Range(0, imagensInimigos.Length);
         //pega a sequencia
         sequence = GameObject.FindWithTag("Spawner").GetComponent<createString>().generateSequence();

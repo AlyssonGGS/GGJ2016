@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Assets\Esperar.cs" />
     <Compile Include="Assets\OutrasCenas.cs" />
+    <Compile Include="Assets\Prefabs\LaserController.cs" />
     <Compile Include="Assets\SceneManager.cs" />
     <Compile Include="Assets\Scripts\AndarComSom.cs" />
     <Compile Include="Assets\Scripts\ControlaNecro.cs" />

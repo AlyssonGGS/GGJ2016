@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using UnityEngine;
-using System.Collections.Generic;
+﻿using UnityEngine;
 
 public class ControlaSequencia : MonoBehaviour {
     Personagem atual = new Monge();
@@ -9,6 +6,7 @@ public class ControlaSequencia : MonoBehaviour {
     string sequencia;
     //usado para dizer em qual parte da sequencia os jogadores estão
     public static int posSequencia;
+    public GameObject raio;
 
     void Update()
     {
@@ -25,20 +23,20 @@ public class ControlaSequencia : MonoBehaviour {
                 string estado = atual.testaInput(c);
                 if (estado == "certo")
                 {
-					print(posSequencia++);
+                    posSequencia++;
 
                     if (acabouSequencia())
                     {
 						restauraSequencia();
+                        GameObject enemy = GameObject.Find("enemy");
+                        GameObject.Find("Raio").GetComponent<LaserController>().chamarRaio(new Vector3(enemy.transform.position.x, -Camera.main.orthographicSize));
                         //vai na classe de controle de jogo para informar que um inimigo precisa ser destruido e, consequentemente, outro precisa ser instanciado
-                        GameObject.Find("Começar").GetComponent<ControleJogo>().inimigoDestruido(GameObject.Find("enemy"));
                         GetComponent<AudioSource>().Play();
                     }
 					else
 					{
 						vezDeQuem();
 					}
-                    //acertou a tecla
                 }
                 else
                 {
