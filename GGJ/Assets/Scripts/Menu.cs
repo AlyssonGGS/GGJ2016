@@ -9,7 +9,6 @@ public class Menu : MonoBehaviour
 	void Start ()
     {
         contador = 0;
-        modificaTextoOpcao(0, 30);
 	}
 	
 	void Update ()
@@ -37,12 +36,8 @@ public class Menu : MonoBehaviour
     }
     void modificaTextoOpcao(int opAnterior)
     {
-        opcoes[opAnterior].GetComponent<Text>().fontSize = 20;
-        opcoes[contador].GetComponent<Text>().fontSize = 30;
-    }
-    void modificaTextoOpcao(int cont, int size)
-    {
-        opcoes[cont].GetComponent<Text>().fontSize = size;
+        opcoes[opAnterior].transform.localScale = new Vector3(1, 1, 1);
+        opcoes[contador].transform.localScale = new Vector3(1.1f, 1.1f, 1) * (Screen.width/Screen.height);
     }
 
     IEnumerator troca()
