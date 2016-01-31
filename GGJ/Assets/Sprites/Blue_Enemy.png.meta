@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 60be04695d83a8e469e75c46504e3bde
-timeCreated: 1454210124
+timeCreated: 1454212029
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,17 +62,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 1, w: 0}
     - name: Blue_Enemy_1
       rect:
         serializedVersion: 2
         x: 40
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -82,7 +82,7 @@ TextureImporter:
         serializedVersion: 2
         x: 80
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -92,7 +92,7 @@ TextureImporter:
         serializedVersion: 2
         x: 120
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -112,7 +112,7 @@ TextureImporter:
         serializedVersion: 2
         x: 200
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -122,7 +122,7 @@ TextureImporter:
         serializedVersion: 2
         x: 240
         y: 0
-        width: 40
+        width: 39
         height: 30
       alignment: 0
       pivot: {x: .5, y: .5}
