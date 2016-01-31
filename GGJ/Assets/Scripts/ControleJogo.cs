@@ -7,11 +7,6 @@ public class ControleJogo : MonoBehaviour {
     public Sprite[] imagensInimigos;//guarda os sprites dos inimigos
     public RuntimeAnimatorController[] controller;//guarda os controles de animação dos inimigos
 
-    void Start ()
-    {
-        StartCoroutine(criarInimigo(0.2f));
-    }
-
     void Update () {
 	
 	}
@@ -27,13 +22,14 @@ public class ControleJogo : MonoBehaviour {
         StartCoroutine(criarInimigo(0.2f));//instancia um novo em x segundos
     }
 
-    IEnumerator criarInimigo(float tempo)
+    public IEnumerator criarInimigo(float tempo)
     {
         //zera a posição do pivot dos inimigos
-        transform.position = Vector3.zero;
         //espera o tempo
         yield return new WaitForSeconds(tempo);
         //escolhe qual inimigo instanciar
+        print("xablau");
+
         int idInimigoAtual = Random.Range(0, imagensInimigos.Length);
         //pega a sequencia
         sequence = GameObject.FindWithTag("Spawner").GetComponent<createString>().generateSequence();
@@ -46,6 +42,6 @@ public class ControleJogo : MonoBehaviour {
         prox.GetComponent<SpriteRenderer>().sprite = imagensInimigos[idInimigoAtual];
         prox.GetComponent<Animator>().runtimeAnimatorController = controller[idInimigoAtual];
         //prende o inimigo ao objeto atual(pivot)
-        prox.transform.parent = gameObject.transform;
+        prox.transform.parent = GameObject.Find("AndarComSom").transform;
     }
 }

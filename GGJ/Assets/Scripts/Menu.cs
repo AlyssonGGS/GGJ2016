@@ -15,6 +15,11 @@ public class Menu : MonoBehaviour
 	void Update ()
     {
         alteraOpcao();
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GetComponent<AudioSource>().Play();
+            StartCoroutine(troca());
+        }
     }
     void alteraOpcao()
     {
@@ -38,5 +43,11 @@ public class Menu : MonoBehaviour
     void modificaTextoOpcao(int cont, int size)
     {
         opcoes[cont].GetComponent<Text>().fontSize = size;
+    }
+
+    IEnumerator troca()
+    {
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        SceneManager.changeScene(opcoes[contador].name);
     }
 }

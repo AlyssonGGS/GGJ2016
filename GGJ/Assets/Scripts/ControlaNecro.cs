@@ -3,6 +3,10 @@ using System.Collections;
 //classe usada para controlar as animações do necromance pelo teclado
 public class ControlaNecro : MonoBehaviour {
 
+    void Start()
+    {
+        transform.position = Vector3.left * Camera.main.orthographicSize;
+    }
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.W))
