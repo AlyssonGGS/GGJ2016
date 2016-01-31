@@ -4,6 +4,7 @@ public class AndarComSom : MonoBehaviour
 {
     AudioSource audio;
     float[] spectrum = new float[128];
+    public float speed;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class AndarComSom : MonoBehaviour
         {
             if (spectrum[j] > 0.000792f && spectrum[j] < 0.001584)
             {
-                transform.Translate(Vector3.left * Time.deltaTime * spectrum[j] * 100);
+                transform.Translate(Vector3.left * Time.deltaTime * spectrum[j] * 100 * speed);
             }
         }
     }

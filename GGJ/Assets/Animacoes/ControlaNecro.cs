@@ -19,5 +19,9 @@ public class ControlaNecro : MonoBehaviour {
             GetComponent<Animator>().Play("Necro_Left");
         }
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            GetComponent<Animator>().Play("Necro_Down");
+        }
     }
 }

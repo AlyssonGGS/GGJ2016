@@ -5,6 +5,7 @@ public class ControleJogo : MonoBehaviour {
     string sequence;
     static GameObject prox;
     public Sprite[] imagensInimigos;
+    public RuntimeAnimatorController controller;
 
     void Start ()
     {
@@ -28,12 +29,15 @@ public class ControleJogo : MonoBehaviour {
 
     IEnumerator criarInimigo(float tempo)
     {
-        this.transform.position = Vector3.zero;
+        transform.position = Vector3.zero;
         yield return new WaitForSeconds(tempo);
         sequence = GameObject.FindWithTag("Spawner").GetComponent<createString>().generateSequence();
         prox = new GameObject("enemy", typeof(Enemy));
+        prox.transform.position = Vector3.right * Camera.main.orthographicSize * Camera.main.aspect;
         prox.AddComponent<SpriteRenderer>();
         prox.GetComponent<SpriteRenderer>().sprite = imagensInimigos[0];
+        prox.AddComponent<Animator>();
+        prox.GetComponent<Animator>().runtimeAnimatorController = controller;
         prox.transform.parent = gameObject.transform;
     }
 }

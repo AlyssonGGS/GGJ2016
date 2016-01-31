@@ -45,7 +45,7 @@ public class spawnSequence : MonoBehaviour {
 				break;
 			}
 
-			GameObject temp = (GameObject)Instantiate(obj, new Vector2((i-level/4) * 2, 2.5f), Quaternion.identity);
+			GameObject temp = (GameObject)Instantiate(obj, new Vector2(enemy.transform.position.x + (i-level/4) * 2, enemy.transform.position.y + 2.5f), Quaternion.identity);
 			temp.GetComponent<keyPressed>().pos = i + 1;
             temp.transform.parent = enemy.transform;
         }
