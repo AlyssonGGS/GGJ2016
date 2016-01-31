@@ -35,7 +35,6 @@ public class AndarComSom : MonoBehaviour
     IEnumerator aumentarVelocidade() {
         float q = 1.00069876f;
         speed *= q;
-        print(speed);
         yield return new WaitForSeconds(0.1f);
         StartCoroutine(aumentarVelocidade());
     }

@@ -9,4 +9,12 @@ public class Enemy : MonoBehaviour {
         //estava muito grande
         transform.localScale *= 0.5f;
     }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if(c.gameObject.name == "Portal")
+        {
+            print("GameOver"); 
+        }
+    }
 }

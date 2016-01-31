@@ -38,6 +38,7 @@ public class ControleJogo : MonoBehaviour {
         prox.AddComponent<Animator>();
         prox.GetComponent<SpriteRenderer>().sprite = imagensInimigos[idInimigoAtual];
         prox.GetComponent<Animator>().runtimeAnimatorController = controller[idInimigoAtual];
+        prox.AddComponent<BoxCollider2D>();
         //prende o inimigo ao objeto atual(pivot)
         prox.transform.parent = GameObject.Find("AndarComSom").transform;
     }
